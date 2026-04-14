@@ -6,64 +6,56 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int opcao = 0;
+        System.out.println(Math.random());
+        System.out.println(Math.random());
+        System.out.println(Math.random());
+        System.out.println(Math.random());
+        System.out.println(Math.random());
+        System.out.println(Math.random());
 
-        while(opcao != 5) {
-            System.out.println("1. Calcular media de notas.");
-            System.out.println("2. Verificar par ou impar.");
-            System.out.println("3. Converter temperatura C -> F");
-            System.out.println("4. Calculadora simples.");
-            System.out.println("5. Sair.");
+        Scanner scanner = new Scanner(System.in);
+        boolean jogarDnv = true;
 
-            Scanner scanner = new Scanner(System.in);
-            opcao = scanner.nextInt();
+        while(jogarDnv) {
+            int numeroSecreto = (int) (Math.random() * 100) + 1;
+            int input;
+            int tentativas = 0;
+            int limite = 10;
 
-            double primeiroNumero;
-            double segundoNumero;
+            System.out.println("====== JOGO DA ADIVINHAÇÃO =======");
+            System.out.println("Tentativas disponíveis: " + limite);
+            System.out.println("Insira um número de 1 a 100");
 
-            switch (opcao) {
-                case 1: {
-                    System.out.println("Digite a primeira nota");
-                    primeiroNumero = scanner.nextDouble();
-                    System.out.println("Digite a segunda nota");
-                    segundoNumero = scanner.nextDouble();
-                    double media = (primeiroNumero + segundoNumero) / 2;
-                    System.out.println("A média das notas é: " + media);
+            do {
+                System.out.println("Tentativa " + (tentativas + 1) + "/" + limite);
+                input = scanner.nextInt();
+                tentativas++;
+
+                if (input == numeroSecreto) {
+                    System.out.println("Parabéns! Acertou em: " + tentativas + " tentativas");
                     break;
+                } else if (input < numeroSecreto) {
+                    System.out.println("O número está abaixo do correto.");
+                } else {
+                    System.out.println("O número está a cima do correto.");
                 }
-                case 2: {
-                    System.out.println("Digite o número para verificação: ");
-                    int numero = scanner.nextInt();
 
-                    String resultado = (numero%2 == 0) ? "Par" : "Ímpar";
-                    System.out.println("Esse número é: " + resultado);
-                    break;
-                }
-                case 3: {
-                    System.out.println("Digite a temperatura em Celsius.");
-                    double temperaturaEmCelsius = scanner.nextDouble();
-                    double temperaturaFahrenheit = temperaturaEmCelsius * 1.8 + 32;
-                    System.out.println("A temperatura em Fahrenheit é: " + temperaturaFahrenheit);
-                    break;
-                }
-                case 4: {
-                    System.out.println("Digite o primeiro número a ser calculado: ");
-                    primeiroNumero = scanner.nextDouble();
-                    System.out.println("Digite o segundo número a ser calculado: ");
-                    segundoNumero = scanner.nextDouble();
-                    System.out.println("A soma dos números é: " + (primeiroNumero + segundoNumero));
-                    System.out.println("A subtração dos números é: " + (primeiroNumero - segundoNumero));
-                    System.out.println("A divisão dos números é: " + (primeiroNumero / segundoNumero));
-                    System.out.println("A multiplicação dos números é: " + (primeiroNumero * segundoNumero));
-                    break;
-                }
-                case 5: {
-                    System.out.println("Saindo do sistema...");
-                    opcao = 5;
-                    break;
+                if (tentativas == limite) {
+                    System.out.println("O número é: " + numeroSecreto);
                 }
             }
+            while (tentativas < limite);
+            System.out.println("Voce deseja jogar novamente?");
+            System.out.println("1 - SIM");
+            System.out.println("2 - NAO");
+            int opt = scanner.nextInt();
+            if(opt == 1){
+                System.out.println("COMEÇANDO O JOGO NOVAMENTE");
+                jogarDnv = true;
+            } else {
+                jogarDnv = false;
+            }
         }
+        System.out.println("FIM DE JOGO");
     }
 }
-
