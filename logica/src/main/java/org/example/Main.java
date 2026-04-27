@@ -23,6 +23,8 @@ public class Main {
 
             if (senhaCorreta == senhaLida) {
                 System.out.println("Cofre aberto");
+                System.out.println("Cofre fechado");
+                System.out.println("Cofre fechado");
                 break;
             }
 
