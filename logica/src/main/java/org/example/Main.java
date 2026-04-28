@@ -12,12 +12,14 @@ public class Main {
         int senhaLida;
         int tentativas = 0;
 
-//        do {
-//            System.out.println("Digite a senhaCorreta: ");
-//            senhaLida = scanner.nextInt();
-//        } while (senhaCorreta != senhaLida);
 
-        while (tentativas < 3) {
+        do {
+            System.out.println("Digite a senhaCorreta: ");
+            senhaLida = scanner.nextInt();
+        } while (senhaCorreta != senhaLida);
+
+        //feature 1
+        while (tentativas < 4) {
             System.out.println("Digite a senha Correta: ");
             senhaLida = scanner.nextInt();
 
