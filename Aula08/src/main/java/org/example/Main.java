@@ -13,6 +13,7 @@ public class Main {
         System.out.println(Math.random());
         System.out.println(Math.random());
 
+        //Classe biblioteca do java para ler um valor do console.
         Scanner scanner = new Scanner(System.in);
         boolean jogarDnv = true;
 
