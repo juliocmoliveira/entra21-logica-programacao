@@ -8,7 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        int senhaCorreta = 123445;
+        int senhaCorreta = 123456;
         int senhaLida;
         int tentativas = 0;
 
