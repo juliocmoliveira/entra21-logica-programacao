@@ -15,6 +15,7 @@ public class Main {
 
         do {
             System.out.println("Digite a senhaCorreta: ");
+            System.out.println("Digite a senhaCorreta: ");
             senhaLida = scanner.nextInt();
         } while (senhaCorreta != senhaLida);
 
