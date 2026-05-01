@@ -19,9 +19,9 @@ public class Main {
             System.out.println("Digite a senhaCorreta: ");
             senhaLida = scanner.nextInt();
         } while (senhaCorreta != senhaLida);
-
+        System.out.println("Vitor");
         //feature 1
-        while (tentativas < 5) {
+        while (tentativas < 10) {
             System.out.println("Digite a senha Correta: ");
             senhaLida = scanner.nextInt();
 
