@@ -11,6 +11,8 @@ public class Main {
         int senhaCorreta = 123456;
         int senhaLida;
         int tentativas = 0;
+        int tentativas2 = 0;
+        int tentativas3 = 0;
 
 
         do {
